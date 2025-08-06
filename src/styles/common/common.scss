@@ -1,0 +1,67 @@
+@use "../variables/variables.scss" as *;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $nyanza;
+  color: $charcoal;
+
+  a {
+    color: $jasmine;
+    text-decoration: none;
+  }
+
+  .button {
+    background-color: $lapis-lazuli;
+    padding: 8px 16px;
+    border-radius: 16px;
+    transition: 0.6s ease-out;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: $box-shadow-values;
+      transition: 0.3s ease-in;
+    }
+  }
+
+  .navbar {
+    display: flex;
+    background-color: $lapis-lazuli;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 24px;
+
+    position: sticky;
+    top: 0;
+    font-family: $title-font;
+    width: 100vw;
+
+    .icon {
+      height: 40px;
+    }
+
+    .button {
+      font-size: 16px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      border-radius: 0;
+
+      &:hover {
+        background-color: $charcoal;
+        box-shadow: none;
+      }
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+      justify-self: flex-start;
+
+      .icon {
+        padding-right: 10px;
+      }
+    }
+  }
+}
