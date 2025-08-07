@@ -1,0 +1,109 @@
+@use "../variables/variables.scss" as *;
+
+.products-list-page-wrapper {
+  h1 {
+    font-family: $title-font;
+    text-align: center;
+    margin: 40px 0 20px;
+  }
+
+  .category-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    input[type="checkbox"] {
+      accent-color: $cambridge-blue;
+    }
+  }
+
+  .product-list {
+    padding: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: center;
+
+    .product {
+      width: 250px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: $pale-purple;
+      transition: 0.3s ease-out;
+      margin-bottom: 3%;
+      padding: 8px;
+      border-radius: 18px;
+
+      &:hover {
+        box-shadow: $box-shadow-values;
+        transition: 0.3s ease-in;
+      }
+
+      .product-image-wrapper {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        height: 240px;
+
+        .product-image {
+          max-height: 220px;
+          max-width: 220px;
+        }
+      }
+
+      .product-details-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        height: 160px;
+
+        p,
+        h5,
+        h6 {
+          margin: 10px 0;
+        }
+
+        a {
+          color: $charcoal;
+
+          .truncate-wrapper {
+            width: 250px;
+
+            h5 {
+              font-size: 18px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+          }
+        }
+
+        .price,
+        .in-cart {
+          color: $lapis-lazuli;
+          font-weight: bold;
+          font-size: 18px;
+        }
+
+        h6 {
+          font-size: 18px;
+        }
+
+        .plus-minus-wrapper {
+          display: flex;
+          gap: 10px;
+          justify-content: center;
+          align-items: center;
+
+          .icon {
+            width: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -11,6 +11,10 @@ body {
     text-decoration: none;
   }
 
+  .hidden {
+    display: none !important;
+  }
+
   .button {
     background-color: $lapis-lazuli;
     padding: 8px 16px;
@@ -30,7 +34,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     font-size: 24px;
-
+    z-index: 1;
     position: sticky;
     top: 0;
     font-family: $title-font;
