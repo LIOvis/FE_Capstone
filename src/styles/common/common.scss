@@ -31,7 +31,7 @@ body {
   .navbar {
     display: flex;
     background-color: $lapis-lazuli;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     font-size: 24px;
     z-index: 1;
@@ -66,6 +66,11 @@ body {
       .icon {
         padding-right: 10px;
       }
+    }
+
+    .right-nav-links-wrapper {
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }

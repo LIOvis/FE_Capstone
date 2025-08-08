@@ -11,18 +11,20 @@ export default function Navbar() {
         <img src={MercuryIcon} className="icon" />
         <NavLink to="/home">MERX</NavLink>
       </div>
-      <NavLink to="/product-list" className="button">
-        Products
-      </NavLink>
-      <NavLink to="/about" className="button">
-        About
-      </NavLink>
-      <NavLink to="/contact" className="button">
-        Contact
-      </NavLink>
-      <NavLink to="/cart" className="button">
-        <img src={CartIcon} className="icon" />
-      </NavLink>
+      <div className="right-nav-links-wrapper">
+        <NavLink to="/product-list" className="button">
+          Products
+        </NavLink>
+        <NavLink to="/about" className="button">
+          About
+        </NavLink>
+        <NavLink to="/contact" className="button">
+          Contact
+        </NavLink>
+        <NavLink to="/cart" className="button">
+          <img src={CartIcon} className="icon" />
+        </NavLink>
+      </div>
     </div>
   );
 }

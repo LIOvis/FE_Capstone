@@ -12,16 +12,7 @@ function Products(props) {
         let category = product.category.replaceAll(" ", "-");
         category = category.replaceAll("'", "");
 
-        // let filter = document.getElementById(category);
-        // let hidden = "";
-        // if (filter.checked) {
-        //   hidden = "";
-        // } else {
-        //   hidden = "hidden";
-        // }
-
         return (
-          // <div key={product.id} className={`product ${category} ${hidden}`}>
           <div key={product.id} className={`product ${category}`}>
             <div className="product-image-wrapper">
               <NavLink to={`/product-detail/${product.id}`}>
@@ -42,6 +33,7 @@ function Products(props) {
                 <img src={plusIcon} className="icon button" />
               </div>
             </div>
+            {CheckBoxes()}
           </div>
         );
       })}
@@ -49,18 +41,34 @@ function Products(props) {
   );
 }
 
-// async function FilterCategories(category) {
-//   await Products;
-//   let filter = document.getElementById(category);
-//   const elements = document.getElementsByClassName(category);
-//   console.log(elements);
+function CheckBoxes() {
+  const checkboxIds = [
+    "mens-clothing",
+    "womens-clothing",
+    "jewelery",
+    "electronics",
+  ];
+  for (let i = 0; i < 4; i++) {
+    let checkbox = document.getElementById(checkboxIds[i]);
+    checkbox.checked = true;
+  }
+}
 
-//   if (!filter.checked) {
-//     elements.forEach((element) => element.classList.add("hidden"));
-//   } else {
-//     elements.forEach((element) => element.classList.remove("hidden"));
-//   }
-// }
+async function FilterCategories(category) {
+  await ProductList;
+  const filter = document.getElementById(category);
+  const elements = document.getElementsByClassName(category);
+
+  if (!filter.checked) {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.add("hidden");
+    }
+  } else {
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.remove("hidden");
+    }
+  }
+}
 
 export default function ProductList() {
   const [products, setProducts] = useState([]);
@@ -86,40 +94,36 @@ export default function ProductList() {
             type="checkbox"
             id="mens-clothing"
             name="mens-clothing"
-            defaultChecked={true}
-            // onChange={FilterCategories("mens-clothing")}
+            onChange={(e) => FilterCategories(e.target.id)}
           />
-          <label for="mens-clothing">Men's Clothing</label>
-        </div>
-        <div className="category">
-          <input
-            type="checkbox"
-            id="womens-clothing"
-            name="womens-clothing"
-            defaultChecked={true}
-            // onChange={FilterCategories("womens-clothing")}
-          />
-          <label for="womens-clothing">Women's Clothing</label>
+          <label htmlFor="mens-clothing">Men's Clothing</label>
         </div>
         <div className="category">
           <input
             type="checkbox"
             id="jewelery"
             name="jewelery"
-            defaultChecked={true}
-            // onChange={FilterCategories("jewelery")}
+            onChange={(e) => FilterCategories(e.target.id)}
           />
-          <label for="jewelery">Jewelery</label>
+          <label htmlFor="jewelery">Jewelery</label>
         </div>
         <div className="category">
           <input
             type="checkbox"
             id="electronics"
             name="electronics"
-            defaultChecked={true}
-            // onChange={FilterCategories("electronics")}
+            onChange={(e) => FilterCategories(e.target.id)}
           />
-          <label for="electronics">Electronics</label>
+          <label htmlFor="electronics">Electronics</label>
+        </div>
+        <div className="category">
+          <input
+            type="checkbox"
+            id="womens-clothing"
+            name="womens-clothing"
+            onChange={(e) => FilterCategories(e.target.id)}
+          />
+          <label htmlFor="womens-clothing">Women's Clothing</label>
         </div>
       </div>
       <Products products={products} />
