@@ -1,15 +1,25 @@
-import { useState } from "react";
-
 const delay = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-async function SendMessage(isDisabled) {
+async function SendMessage() {
+  let empty = false;
+  const formItems = document.getElementsByClassName("contact-form-item");
   const contactFormItems = document.getElementsByClassName("contact-form-item");
   const sendButton = document.querySelector(".contact-form-button");
   let message = "";
 
-  if (isDisabled) {
+  for (let i = 0; i < 4; i++) {
+    if (i > 0 && empty) {
+      empty = true;
+    } else if (!formItems[i].value) {
+      empty = true;
+    } else {
+      empty = false;
+    }
+  }
+
+  if (empty) {
     message = document.querySelector(".message-incomplete");
   } else {
     message = document.querySelector(".message-sent");
@@ -19,29 +29,14 @@ async function SendMessage(isDisabled) {
     contactFormItems[i].value = "";
   }
 
-  message.ClassList.remove("hidden");
+  message.classList.remove("hidden");
   sendButton.disabled = true;
-  await delay(3000);
-  message.ClassList.add("hidden");
+  await delay(2000);
+  message.classList.add("hidden");
   sendButton.disabled = false;
 }
 
 export default function Contact() {
-  const [isDisabled, setISDisabled] = useState(true);
-
-  function SetDisabled() {
-    const formItems = document.getElementsByClassName("contact-form-item");
-    for (let i = 0; i < 4; i++) {
-      if (i > 0 && isDisabled) {
-        setISDisabled(true);
-      } else if (!formItems[i].value) {
-        setISDisabled(true);
-      } else {
-        setISDisabled(false);
-      }
-    }
-  }
-
   return (
     <div className="contact-page-wrapper">
       <form className="contact-form">
@@ -52,18 +47,24 @@ export default function Contact() {
         <label htmlFor="email">Email: </label>
         <input type="email" name="email" className="contact-form-item" />
         <label htmlFor="message">Message: </label>
-        <textarea name="message" className="contact-form-item"></textarea>
+        <textarea
+          name="message"
+          className="contact-form-item"
+          rows={1}
+        ></textarea>
         <button
           type="button"
           className="button contact-form-button"
-          onClick={(e) => SendMessage(e.target.isDisabled)}
+          onClick={SendMessage}
           disabled={false}
         >
           Send
         </button>
-        <div className="message-sent hidden">Message Sent!</div>
-        <div className="message-incomplete hidden">
-          Please Fill Out All Fields
+        <div className="send-messages">
+          <div className="message-sent hidden">Message Sent!</div>
+          <div className="message-incomplete hidden">
+            Please Fill Out All Fields
+          </div>
         </div>
       </form>
     </div>

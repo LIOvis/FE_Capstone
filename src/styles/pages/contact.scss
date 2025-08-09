@@ -1,0 +1,49 @@
+@use "../variables/variables.scss" as *;
+
+.contact-page-wrapper {
+  padding: 18px;
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    label {
+      font-family: $title-font;
+      width: 90%;
+    }
+
+    input,
+    textarea {
+      font-family: $body-font;
+      width: 80%;
+      margin-bottom: 20px;
+      border: none;
+      border-bottom: 2px solid $cambridge-blue;
+      background-color: $nyanza;
+      outline: none;
+      color: $charcoal;
+      font-size: 18px;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+
+      &:focus {
+        border-bottom-color: $lapis-lazuli;
+        transition: 0.3s ease-in;
+      }
+    }
+
+    button {
+      color: $jasmine;
+      border: none;
+      font-family: $title-font;
+    }
+
+    .send-messages {
+      display: inline-block;
+      height: 20px;
+      color: $lapis-lazuli;
+    }
+  }
+}
