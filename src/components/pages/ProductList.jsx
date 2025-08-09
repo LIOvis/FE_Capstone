@@ -33,25 +33,11 @@ function Products(props) {
                 <img src={plusIcon} className="icon button" />
               </div>
             </div>
-            {CheckBoxes()}
           </div>
         );
       })}
     </div>
   );
-}
-
-function CheckBoxes() {
-  const checkboxIds = [
-    "mens-clothing",
-    "womens-clothing",
-    "jewelery",
-    "electronics",
-  ];
-  for (let i = 0; i < 4; i++) {
-    let checkbox = document.getElementById(checkboxIds[i]);
-    checkbox.checked = true;
-  }
 }
 
 async function FilterCategories(category) {
@@ -95,6 +81,7 @@ export default function ProductList() {
             id="mens-clothing"
             name="mens-clothing"
             onChange={(e) => FilterCategories(e.target.id)}
+            defaultChecked={true}
           />
           <label htmlFor="mens-clothing">Men's Clothing</label>
         </div>
@@ -104,6 +91,7 @@ export default function ProductList() {
             id="jewelery"
             name="jewelery"
             onChange={(e) => FilterCategories(e.target.id)}
+            defaultChecked={true}
           />
           <label htmlFor="jewelery">Jewelery</label>
         </div>
@@ -113,6 +101,7 @@ export default function ProductList() {
             id="electronics"
             name="electronics"
             onChange={(e) => FilterCategories(e.target.id)}
+            defaultChecked={true}
           />
           <label htmlFor="electronics">Electronics</label>
         </div>
@@ -122,6 +111,7 @@ export default function ProductList() {
             id="womens-clothing"
             name="womens-clothing"
             onChange={(e) => FilterCategories(e.target.id)}
+            defaultChecked={true}
           />
           <label htmlFor="womens-clothing">Women's Clothing</label>
         </div>
