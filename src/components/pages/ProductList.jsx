@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
+import Loading from "../Loading";
+
 import plusIcon from "../../assets/plus.svg";
 import minusIcon from "../../assets/minus.svg";
-import loadingIcon from "../../assets/loading.svg";
 
 function Products(props) {
   const [sortedProducts, setSortedProducts] = useState([]);
@@ -129,7 +130,7 @@ export default function ProductList() {
   return (
     <div className="page-wrapper">
       {isLoading ? (
-        <img src={loadingIcon} className="loading-icon" />
+        <Loading />
       ) : (
         <div className="products-list-page-wrapper">
           <h1>Products</h1>

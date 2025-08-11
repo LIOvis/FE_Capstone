@@ -1,0 +1,57 @@
+@use "../variables/variables.scss" as *;
+.product-detail-wrapper {
+  display: flex;
+  gap: 10%;
+  padding: 5%;
+  margin: 5%;
+  background-color: $pale-purple;
+  height: 60vh;
+  border-radius: 18px;
+
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p,
+    h3,
+    h5 {
+      margin: 0;
+    }
+
+    .category {
+      margin-bottom: 10px;
+    }
+
+    .title {
+      margin-bottom: 20px;
+    }
+
+    .description {
+      margin-bottom: 20px;
+    }
+
+    .price {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    h5 {
+      font-size: 18px;
+      text-align: center;
+      color: $lapis-lazuli;
+      margin-bottom: 10px;
+    }
+
+    .plus-minus-wrapper {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        width: 20px;
+      }
+    }
+  }
+}
