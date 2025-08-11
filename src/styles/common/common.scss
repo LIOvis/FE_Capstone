@@ -73,4 +73,12 @@ body {
       justify-content: flex-end;
     }
   }
+
+  .loading-icon {
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    width: 60%;
+    margin: 5% 20%;
+  }
 }
