@@ -81,4 +81,28 @@ body {
     width: 60%;
     margin: 5% 20%;
   }
+
+  .in-cart-wrapper {
+    h6 {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .plus-minus-wrapper {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+
+      .icon {
+        width: 10px;
+      }
+
+      .in-cart {
+        color: $lapis-lazuli;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
 }

@@ -113,26 +113,10 @@
           }
         }
 
-        .price,
-        .in-cart {
+        .price {
           color: $lapis-lazuli;
           font-weight: bold;
           font-size: 18px;
-        }
-
-        h6 {
-          font-size: 18px;
-        }
-
-        .plus-minus-wrapper {
-          display: flex;
-          gap: 10px;
-          justify-content: center;
-          align-items: center;
-
-          .icon {
-            width: 10px;
-          }
         }
       }
     }

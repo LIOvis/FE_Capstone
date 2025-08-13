@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import Loading from "../Loading";
-
-import plusIcon from "../../assets/plus.svg";
-import minusIcon from "../../assets/minus.svg";
+import { PopulateCart } from "../PopulateCart";
+import InCartWrapper from "../InCartWrapper";
 
 function Products(props) {
   const [sortedProducts, setSortedProducts] = useState([]);
@@ -52,7 +51,6 @@ function Products(props) {
       </div>
       <div className="product-list">
         {sortedProducts.map((product) => {
-          product.inCart = 0;
           let category = product.category.replaceAll(" ", "-");
           category = category.replaceAll("'", "");
 
@@ -70,12 +68,15 @@ function Products(props) {
                   </div>
                 </NavLink>
                 <p className="price">${product.price.toFixed(2)}</p>
-                <h6>Add to Cart</h6>
-                <div className="plus-minus-wrapper">
-                  <img src={minusIcon} className="icon button" />
-                  <p className="in-cart">{product.inCart}</p>
-                  <img src={plusIcon} className="icon button" />
-                </div>
+                <InCartWrapper product={product} />
+                {/* <div className="in-cart-wrapper">
+                  <h6>{inCart[product.id] > 0 ? "In Cart" : "Add to Cart"}</h6>
+                  <div className="plus-minus-wrapper">
+                    <img src={minusIcon} className="icon button" />
+                    <p className="in-cart">{inCart[product.id]}</p>
+                    <img src={plusIcon} className="icon button" />
+                  </div>
+                </div> */}
               </div>
             </div>
           );
@@ -178,6 +179,7 @@ export default function ProductList() {
             </div>
           </div>
           <Products products={products} />
+          <PopulateCart products={products} />
         </div>
       )}
     </div>
