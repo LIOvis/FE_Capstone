@@ -21,8 +21,10 @@ export default function InCartWrapper(props) {
   });
 
   const subCart = () => {
-    if (qty !== 0) {
+    if (qty > 1) {
       setQty(qty - 1);
+    } else if (qty === 1) {
+      setQty(1);
     } else {
       setQty(0);
     }

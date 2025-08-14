@@ -69,14 +69,6 @@ function Products(props) {
                 </NavLink>
                 <p className="price">${product.price.toFixed(2)}</p>
                 <InCartWrapper product={product} />
-                {/* <div className="in-cart-wrapper">
-                  <h6>{inCart[product.id] > 0 ? "In Cart" : "Add to Cart"}</h6>
-                  <div className="plus-minus-wrapper">
-                    <img src={minusIcon} className="icon button" />
-                    <p className="in-cart">{inCart[product.id]}</p>
-                    <img src={plusIcon} className="icon button" />
-                  </div>
-                </div> */}
               </div>
             </div>
           );

@@ -21,5 +21,4 @@ export function PopulateCart(props) {
       inCart[product.id] = 0;
     }
   });
-  console.log(inCart);
 }
