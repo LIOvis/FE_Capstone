@@ -10,10 +10,6 @@ function Products(props) {
   const [sortKey, setSortKey] = useState("id");
   const [sortAsc, setSortAsc] = useState(true);
 
-  useEffect(() => {
-    setSortedProducts(sortByKey(props.products, sortKey, sortAsc));
-  }, [props.products, sortKey, sortAsc]);
-
   const handleSortChange = (value) => {
     setSortKey(value);
   };
@@ -25,6 +21,10 @@ function Products(props) {
       setSortAsc(false);
     }
   };
+
+  useEffect(() => {
+    setSortedProducts(sortByKey(props.products, sortKey, sortAsc));
+  }, [props.products, sortKey, sortAsc]);
 
   return (
     <div className="products-list-wrapper">

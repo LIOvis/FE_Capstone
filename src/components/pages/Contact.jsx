@@ -23,10 +23,9 @@ async function SendMessage() {
     message = document.querySelector(".message-incomplete");
   } else {
     message = document.querySelector(".message-sent");
-  }
-
-  for (let i = 0; i < 4; i++) {
-    contactFormItems[i].value = "";
+    for (let i = 0; i < 4; i++) {
+      contactFormItems[i].value = "";
+    }
   }
 
   message.classList.remove("hidden");
@@ -42,15 +41,31 @@ export default function Contact() {
       <h1 className="contact-title">Contact Us</h1>
       <form className="contact-form">
         <label htmlFor="first-name">First Name: </label>
-        <input type="text" name="first-name" className="contact-form-item" />
+        <input
+          type="text"
+          name="first-name"
+          className="contact-form-item"
+          id="first-name-form"
+        />
         <label htmlFor="last-name">Last Name: </label>
-        <input type="text" name="last-name" className="contact-form-item" />
+        <input
+          type="text"
+          name="last-name"
+          className="contact-form-item"
+          id="last-name-form"
+        />
         <label htmlFor="email">Email: </label>
-        <input type="email" name="email" className="contact-form-item" />
+        <input
+          type="email"
+          name="email"
+          className="contact-form-item"
+          id="email-form"
+        />
         <label htmlFor="message">Message: </label>
         <textarea
           name="message"
           className="contact-form-item"
+          id="message-form"
           rows={1}
         ></textarea>
         <button

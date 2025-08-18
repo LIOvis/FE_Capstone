@@ -13,13 +13,6 @@ export default function InCartWrapper(props) {
     setQty(0);
   }
 
-  useEffect(() => {
-    if (inCart[id] !== qty) {
-      inCart[id] = qty;
-      setQty(inCart[id]);
-    }
-  });
-
   const subCart = () => {
     if (qty > 1) {
       setQty(qty - 1);
@@ -35,6 +28,13 @@ export default function InCartWrapper(props) {
     setQty(qty + 1);
     inCart[id] = qty;
   };
+
+  useEffect(() => {
+    if (inCart[id] !== qty) {
+      inCart[id] = qty;
+      setQty(inCart[id]);
+    }
+  });
 
   return (
     <div className="in-cart-wrapper">

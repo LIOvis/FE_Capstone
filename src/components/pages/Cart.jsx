@@ -11,14 +11,11 @@ function CartProductList(props) {
   const [subtotalCost, setSubtotalCost] = useState(0);
   const [totalInCart, setTotalInCart] = useState(0);
 
-  console.log(subtotalCost);
-
   const getSubtotalCost = () => {
     let totalCost = 0;
     props.products.map((product) => {
       totalCost = totalCost + product.price * inCart[product.id];
     });
-    console.log(totalCost);
 
     return totalCost;
   };
@@ -30,17 +27,6 @@ function CartProductList(props) {
     });
     return totalItems;
   };
-
-  useEffect(() => {
-    if (subtotalCost !== getSubtotalCost()) {
-      setSubtotalCost(getSubtotalCost());
-    }
-  });
-  useEffect(() => {
-    if (totalInCart !== getTotalInCart()) {
-      setTotalInCart(getTotalInCart());
-    }
-  });
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
@@ -108,6 +94,17 @@ function CartProductList(props) {
       );
     }
   };
+
+  useEffect(() => {
+    if (subtotalCost !== getSubtotalCost()) {
+      setSubtotalCost(getSubtotalCost());
+    }
+  });
+  useEffect(() => {
+    if (totalInCart !== getTotalInCart()) {
+      setTotalInCart(getTotalInCart());
+    }
+  });
 
   if (totalInCart === 0) {
     return <div className="nothing-in-cart">Nothing In the Cart</div>;
