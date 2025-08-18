@@ -1,0 +1,20 @@
+@media (max-width: 790px) {
+  #root {
+    .content-wrapper {
+      .navbar {
+        .right-nav-links-wrapper {
+          display: none;
+        }
+
+        .hamburger-menu {
+          display: inline;
+
+          .open-menu {
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}

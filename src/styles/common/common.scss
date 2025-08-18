@@ -45,6 +45,10 @@ body {
       font-family: $title-font;
       width: 100vw;
 
+      .hamburger-menu {
+        display: none;
+      }
+
       .icon {
         height: 40px;
       }
@@ -117,10 +121,10 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 30px 80px;
+      padding: 30px 5%;
       position: relative;
       bottom: 0;
-      width: calc(100% - 160px);
+      width: calc(90%);
 
       a {
         color: $cambridge-blue;
@@ -138,7 +142,7 @@ body {
 
       .navlink-wrapper {
         display: flex;
-        gap: 20px;
+        gap: 3vw;
         align-items: center;
 
         .spacer-bar {

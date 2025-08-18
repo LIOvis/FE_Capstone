@@ -31,12 +31,16 @@ export default function Navbar() {
       </div>
       <div className="hamburger-menu">
         <div
-          className="toggle-menu"
+          className="toggle-menu button"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
         >
-          {isOpen ? <img src={XIcon} /> : <img src={HamburgerIcon} />}
+          {isOpen ? (
+            <img src={XIcon} className="icon" />
+          ) : (
+            <img src={HamburgerIcon} className="icon" />
+          )}
         </div>
 
         <div className={`open-menu ${!isOpen ? "hidden" : "open"}`}>

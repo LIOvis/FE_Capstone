@@ -1,0 +1,15 @@
+@media (max-width: 750px) {
+  .content-wrapper {
+    .about-page-wrapper {
+      .tribute-wrapper {
+        .tribute-image-text-wrapper {
+          flex-direction: column;
+
+          .licorice-image {
+            margin: 20px 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@media (max-width: 900px) {
+  .content-wrapper {
+    .product-detail-page-wrapper {
+      .product-detail-wrapper {
+        .image-wrapper {
+          width: 250px;
+          height: 300px;
+          .image {
+            max-width: 250px;
+            max-height: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .content-wrapper {
+    .product-detail-page-wrapper {
+      .product-detail-wrapper {
+        flex-direction: column;
+        height: auto;
+        .image-wrapper {
+          text-align: center;
+          padding-bottom: 40px;
+        }
+      }
+    }
+  }
+}

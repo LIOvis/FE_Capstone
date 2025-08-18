@@ -181,6 +181,7 @@ export default function Cart() {
 
   return (
     <div className="cart-page-wrapper page-wrapper">
+      <div className="cart-title">Cart</div>
       <PopulateCart products={products} />
       <CartProductList products={products} />
     </div>

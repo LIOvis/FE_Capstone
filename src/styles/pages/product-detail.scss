@@ -1,39 +1,60 @@
 @use "../variables/variables.scss" as *;
-.product-detail-wrapper {
-  display: flex;
-  gap: 10%;
-  padding: 5%;
-  margin: 5%;
-  background-color: $pale-purple;
-  height: 60vh;
-  border-radius: 18px;
 
-  .product-details {
+.product-detail-page-wrapper {
+  padding-bottom: 0.1%;
+
+  .product-detail-wrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap: 10%;
+    padding: 5%;
+    margin: 5%;
+    background-color: $pale-purple;
+    height: 60vh;
+    border-radius: 18px;
+    align-items: center;
 
-    p,
-    h3,
-    h5 {
-      margin: 0;
+    .image-wrapper {
+      height: 350px;
+      width: 400px;
+
+      .image {
+        max-height: 350px;
+        max-width: 400px;
+      }
     }
 
-    .category {
-      margin-bottom: 10px;
-    }
+    .product-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-    .title {
-      margin-bottom: 20px;
-    }
+      p,
+      h3 {
+        margin: 0;
+      }
 
-    .description {
-      margin-bottom: 20px;
-    }
+      .category {
+        margin-bottom: 10px;
+      }
 
-    .price {
-      margin-bottom: 20px;
-      font-size: 18px;
+      .title {
+        margin-bottom: 20px;
+      }
+
+      .description {
+        margin-bottom: 20px;
+      }
+
+      .price {
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: $lapis-lazuli;
+        font-weight: bold;
+      }
+
+      h6 {
+        margin: 15px 0;
+      }
     }
   }
 }

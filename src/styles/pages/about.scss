@@ -1,0 +1,69 @@
+@use "../variables/variables.scss" as *;
+
+.about-page-wrapper {
+  p {
+    margin: 0;
+  }
+
+  .about-page-title {
+    font-family: $title-font;
+    font-size: 32px;
+    margin: 40px 0 20px;
+    text-align: center;
+  }
+
+  .about-wrapper,
+  .tribute-wrapper {
+    padding: 5%;
+    margin: 5%;
+    border-radius: 18px;
+
+    .about-title,
+    .tribute-title {
+      font-family: $title-font;
+      text-align: center;
+      color: $lapis-lazuli;
+      width: 100%;
+    }
+
+    .about-content,
+    .tribute-content {
+      text-align: center;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  .about-wrapper {
+    background-color: $pale-purple;
+  }
+
+  .tribute-wrapper {
+    background-color: $cambridge-blue;
+
+    .tribute-image-text-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      .licorice-image {
+        width: 250px;
+        border-radius: 18px;
+      }
+
+      .tribute-content-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .tribute-content {
+          text-align: justify;
+        }
+
+        .tribute-quote {
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+}

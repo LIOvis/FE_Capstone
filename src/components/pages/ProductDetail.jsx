@@ -24,12 +24,14 @@ export default function ProductDetail(props) {
   }, []);
 
   return (
-    <div className="page-wrapper">
+    <div className="product-detail-page-wrapper page-wrapper">
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="product-detail-wrapper page-wrapper">
-          <img src={product.image} />
+        <div className="product-detail-wrapper">
+          <div className="image-wrapper">
+            <img src={product.image} className="image" />
+          </div>
           <div className="product-details">
             <p className="category">{product.category}</p>
             <h3 className="title">{product.title}</h3>
