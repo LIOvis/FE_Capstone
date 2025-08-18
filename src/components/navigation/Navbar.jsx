@@ -1,10 +1,14 @@
 import { NavLink } from "react-router-dom";
-import MercuryIcon from "/mercury-favicon.svg";
-import CartIcon from "../../assets/cart.svg";
+import { useState } from "react";
 
-import Routing from "./Routing";
+import MercuryIcon from "/mercury-favicon.svg";
+import CartIcon from "../../assets/icons/cart.svg";
+import HamburgerIcon from "../../assets/icons/hamburger.svg";
+import XIcon from "../../assets/icons/x.svg";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="navbar">
       <div className="logo-title button">
@@ -24,6 +28,47 @@ export default function Navbar() {
         <NavLink to="/cart" className="button">
           <img src={CartIcon} className="icon" />
         </NavLink>
+      </div>
+      <div className="hamburger-menu">
+        <div
+          className="toggle-menu"
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          {isOpen ? <img src={XIcon} /> : <img src={HamburgerIcon} />}
+        </div>
+
+        <div className={`open-menu ${!isOpen ? "hidden" : "open"}`}>
+          <NavLink
+            to="/product-list"
+            className="button"
+            onClick={() => setIsOpen(false)}
+          >
+            Products
+          </NavLink>
+          <NavLink
+            to="/about"
+            className="button"
+            onClick={() => setIsOpen(false)}
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className="button"
+            onClick={() => setIsOpen(false)}
+          >
+            Contact
+          </NavLink>
+          <NavLink
+            to="/cart"
+            className="button"
+            onClick={() => setIsOpen(false)}
+          >
+            <img src={CartIcon} className="icon" />
+          </NavLink>
+        </div>
       </div>
     </div>
   );

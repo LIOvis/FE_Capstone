@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 
 import { inCart } from "./PopulateCart";
 
-import plusIcon from "../assets/plus.svg";
-import minusIcon from "../assets/minus.svg";
+import plusIcon from "../assets/icons/plus.svg";
+import minusIcon from "../assets/icons/minus.svg";
 
 export default function InCartWrapper(props) {
   const id = props.product.id;
