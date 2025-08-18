@@ -180,7 +180,7 @@ export default function Cart() {
   }, []);
 
   return (
-    <div className="cart-page-wrapper">
+    <div className="cart-page-wrapper page-wrapper">
       <PopulateCart products={products} />
       <CartProductList products={products} />
     </div>

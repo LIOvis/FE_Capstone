@@ -28,7 +28,7 @@ export default function ProductDetail(props) {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="product-detail-wrapper">
+        <div className="product-detail-wrapper page-wrapper">
           <img src={product.image} />
           <div className="product-details">
             <p className="category">{product.category}</p>

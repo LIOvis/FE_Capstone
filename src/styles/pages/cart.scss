@@ -82,9 +82,11 @@
   }
 
   .nothing-in-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
     font-size: 20px;
-    width: 250px;
-    margin: 20% calc(50% - 125px);
     color: $cambridge-blue;
     font-family: $title-font;
     text-align: center;

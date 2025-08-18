@@ -1,9 +1,8 @@
 @use "../variables/variables.scss" as *;
 
 .contact-page-wrapper {
-  padding: 18px;
-
   .contact-form {
+    padding: 48px 18px 18px 18px;
     display: flex;
     flex-direction: column;
     gap: 10px;

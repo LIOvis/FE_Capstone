@@ -121,11 +121,11 @@ export default function ProductList() {
   }, []);
 
   return (
-    <div className="page-wrapper">
+    <div className="products-list-page-wrapper page-wrapper">
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="products-list-page-wrapper">
+        <div className="products-list-wrapper">
           <h1>Products</h1>
           <div className="filters-wrapper">
             <p>Categories:</p>

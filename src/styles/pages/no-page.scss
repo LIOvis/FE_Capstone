@@ -1,0 +1,21 @@
+@use "../variables/variables.scss" as *;
+
+.no-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  h2,
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    font-family: $title-font;
+  }
+
+  p {
+    margin-bottom: 80px;
+  }
+}

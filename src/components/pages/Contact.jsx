@@ -38,7 +38,7 @@ async function SendMessage() {
 
 export default function Contact() {
   return (
-    <div className="contact-page-wrapper">
+    <div className="contact-page-wrapper page-wrapper">
       <form className="contact-form">
         <label htmlFor="first-name">First Name: </label>
         <input type="text" name="first-name" className="contact-form-item" />
