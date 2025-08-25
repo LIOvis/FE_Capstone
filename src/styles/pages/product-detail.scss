@@ -1,15 +1,17 @@
 @use "../variables/variables.scss" as *;
 
 .product-detail-page-wrapper {
-  padding-bottom: 0.1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .product-detail-wrapper {
     display: flex;
     gap: 10%;
     padding: 5%;
-    margin: 5%;
+    margin: 0 5%;
     background-color: $pale-purple;
-    height: 60vh;
+    min-height: 300px;
     border-radius: 18px;
     align-items: center;
 
